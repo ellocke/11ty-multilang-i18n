@@ -1,0 +1,59 @@
+<nav>
+  {# {% set navPages = collections.all | eleventyNavigation %} #}
+  {# {% set navPages = collections.all %} #}
+  <ul>
+    {# {{ navPages | safe }} #}
+    {# {%- for entry in navPages %} #}
+    <li>
+      {# <a href="{{ entry.url | url }}"{% if entry.url == page.url %} data-current="current item"{% endif %}>{{ entry.title }}</a> #}
+      {% if locale == 'de' %}
+        <a href="/" {% if page.fileSlug == 'home' %} data-current="current item"{% endif %}>Home: {{locale}}</a>
+        <a href="/report/" {% if page.fileSlug == 'report' %} data-current="current item"{% endif %}>Report: {{locale}}</a>
+        <a href="/contact/" {% if page.fileSlug == 'contact' %} data-current="current item"{% endif %}>Contact: {{locale}}</a>
+      {% else %}
+        <a href="/{{locale}}/" {% if page.fileSlug == 'home' %} data-current="current item"{% endif %}>Home: {{locale}}</a>
+        <a href="/report/{{locale}}/" {% if page.fileSlug == 'report' %} data-current="current item"{% endif %}>Report: {{locale}}</a>
+        <a href="/contact/{{locale}}/" {% if page.fileSlug == 'contact' %} data-current="current item"{% endif %}>Contact: {{locale}}</a>
+      {% endif %}
+    </li>
+    {# {%- endfor %} #}
+  </ul>
+
+  {# render the lang switch links #}
+  <div id="lang-dropdown-container">
+    <details>
+      <summary>
+        <li class="lang-active">{{locale}}</li>
+      </summary>
+      <ul id="lang-dropdown">
+        {# extract path fragment; deal with /home #}
+        {% if page.fileSlug == 'home'%}
+          {% set fileslug = "" %}
+        {% else %}
+          {% set fileslug = page.fileSlug %}
+        {% endif %}
+        {% if locale != 'de' %}
+          {# <li class="lang-active">DE</li> #}
+          {# {% else %} #}
+          <li>
+            <a href="{{ ['/', fileslug, '/'] | join | url }}">DE</a>
+          </li>
+        {% endif %}
+        {% if locale != 'en' %}
+          {# <li class="lang-active">EN</li> #}
+          {# {% else %} #}
+          <li>
+            <a href="{{ ['/', fileslug, '/en/'] | join | url }}">EN</a>
+          </li>
+        {% endif %}
+        {% if locale != 'fr' %}
+          {# <li class="lang-active">FR</li> #}
+          {# {% else %} #}
+          <li>
+            <a href="{{ ['/', fileslug, '/fr/'] | join | url }}">FR</a>
+          </li>
+        {% endif %}
+      </ul>
+    </details>
+  </div>
+</nav>
