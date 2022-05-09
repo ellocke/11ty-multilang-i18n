@@ -28,7 +28,7 @@
       <ul id="lang-dropdown">
         {# extract path fragment; deal with /home #}
         {% if page.fileSlug == 'home'%}
-          {% set fileslug = "" %}
+          {% set fileslug = "" | url %}
         {% else %}
           {% set fileslug = page.fileSlug %}
         {% endif %}
