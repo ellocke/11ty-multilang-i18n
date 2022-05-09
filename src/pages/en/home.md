@@ -17,4 +17,4 @@ This is a (modified)\* template for building a simple blog website with the [Ele
 
 Includes [Netlify CMS](https://www.netlifycms.org) for WYSIWYG content editing, and [Netlify Forms](https://www.netlify.com/docs/form-handling) for processing your site's form data.
 
-For more info on installation and usage, view the [project repo]({{ pkg.repository.url }}) on GitHub.
+For more info on installation and usage, view the [original project repo]({{ pkg.repository.url }}) on GitHub, and find the [i18n-mod by @fubits here](https://github.com/fubits1/11ty-multilang-i18n).

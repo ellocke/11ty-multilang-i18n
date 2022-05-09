@@ -1,25 +1,9 @@
-const {
-  DateTime
-} = require("luxon");
 const CleanCSS = require("clean-css");
 const UglifyJS = require("uglify-js");
 const htmlmin = require("html-minifier");
 // const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function(eleventyConfig) {
-
-  languages: [{
-      label: "deutsch",
-      code: "de",
-    }, {
-      label: "english",
-      code: "en",
-    },
-    {
-      label: "français",
-      code: "fr",
-    },
-  ],
 
   // Eleventy Navigation https://www.11ty.dev/docs/plugins/navigation/
   // eleventyConfig.addPlugin(eleventyNavigationPlugin);
@@ -33,16 +17,6 @@ module.exports = function(eleventyConfig) {
   // Merge data instead of overriding
   // https://www.11ty.dev/docs/data-deep-merge/
   eleventyConfig.setDataDeepMerge(true);
-
-  // Date formatting (human readable)
-  eleventyConfig.addFilter("readableDate", dateObj => {
-    return DateTime.fromJSDate(dateObj).toFormat("dd LLL yyyy");
-  });
-
-  // Date formatting (machine readable)
-  eleventyConfig.addFilter("machineDate", dateObj => {
-    return DateTime.fromJSDate(dateObj).toFormat("yyyy-MM-dd");
-  });
 
   // Minify CSS
   eleventyConfig.addFilter("cssmin", function(code) {

@@ -13,7 +13,7 @@ eleventyNavigation:
 
 ![test SVG](/static/img/logo.svg "test SVG")
 
-## H1 Design System {{ locale}}
+## H1 Design System - {{ locale}}
 
 Leverage [agile frameworks]() to provide a **robust synopsis** for _high level_ overviews. Iterative ~~approaches~~ to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
 
@@ -32,23 +32,19 @@ Bring to the table win-win survival strategies to ensure proactive domination. A
 
 - Item 1
 - Item 2
-
   - Item 1
   - Item 2
-
 - Item 3
 
 Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
 
 1. Item 1
 2. Item 2
-
    1. Item 1
    2. Item 2
-
 3. Item 3
 
-<hr>
+---
 
 ### H3 Blue-sky thinking
 

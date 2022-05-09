@@ -20,6 +20,7 @@
   </ul>
 
   {# render the lang switch links #}
+  {# also see _data/site.js {{ site.languages }} #}
   <div id="lang-dropdown-container">
     <details>
       <summary>
@@ -28,29 +29,23 @@
       <ul id="lang-dropdown">
         {# extract path fragment; deal with /home #}
         {% if page.fileSlug == 'home'%}
-          {% set fileslug = "" | url %}
+          {% set fileSlug = "" | url %}
         {% else %}
-          {% set fileslug = page.fileSlug %}
+          {% set fileSlug = page.fileSlug %}
         {% endif %}
         {% if locale != 'de' %}
-          {# <li class="lang-active">DE</li> #}
-          {# {% else %} #}
           <li>
-            <a href="{{ ['/', fileslug, '/'] | join | url }}">DE</a>
+            <a href="{{ ['/', fileSlug, '/'] | join | url }}">DE</a>
           </li>
         {% endif %}
         {% if locale != 'en' %}
-          {# <li class="lang-active">EN</li> #}
-          {# {% else %} #}
           <li>
-            <a href="{{ ['/', fileslug, '/en/'] | join | url }}">EN</a>
+            <a href="{{ ['/', fileSlug, '/en/'] | join | url }}">EN</a>
           </li>
         {% endif %}
         {% if locale != 'fr' %}
-          {# <li class="lang-active">FR</li> #}
-          {# {% else %} #}
           <li>
-            <a href="{{ ['/', fileslug, '/fr/'] | join | url }}">FR</a>
+            <a href="{{ ['/', fileSlug, '/fr/'] | join | url }}">FR</a>
           </li>
         {% endif %}
       </ul>
